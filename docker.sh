@@ -3,10 +3,10 @@ apt update
 apt upgrade
 apt install git
 y
-git clone https://github.com/CourseraGit70/urban-enigma.git
+##git clone https://github.com/CourseraGit70/urban-enigma.git
 ##login to git
-cd urban-enigma/
-cd urban_enigma_v2/
+##cd urban-enigma/
+##cd urban_enigma_v2/
 
 
 
