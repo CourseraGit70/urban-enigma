@@ -19,4 +19,4 @@ Stretch #2:
   the issues.
 
 Notes:
-The backend has been tested in docker and issues have been reported. 
+The backend has been tested in docker and issues have been reported.  
