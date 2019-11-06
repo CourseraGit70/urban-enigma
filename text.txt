@@ -1,0 +1,14 @@
+<span id="g">urban@enigma</span>:<span id="b">~</span><span id="gd">$</span> cd UrbanEnigma/<!-- laglaglaglaglaglag -->Details
+<span id="g">urban@enigma</span>:<span id="b">~</span><span id="gd">$</span> cat <!-- laglaglaglaglaglaglaglaglag -->readme<br/><br/>
+Not everyone knows how to protect their data. Just because you don't know, though, doesn't mean you should be defenseless.
+
+Urban Enigma is meant to help you decide where your data goes. In order to do that, we'll ask for a little bit of your information, download some software to help protect you, and let you know what's going on behind the scenes.
+
+It shouldn't take too long! If you have any questions that aren't answered by this tutorial, please send us an email at <span id="b">gtyler@chapman.edu</span>.
+
+<!-- please create a long delay so that it fits the theme, thank you. -->
+<span id="g">urban@enigma</span>:<span id="b">~</span><span id="gd">$</span> ./<!-- laglaglaglaglaglaglaglaglag -->information<br/><br/>
+To proceed, we will need some of your personal information.
+<!-- please create a long delay so that it fits the theme, thank you. -->
+<table><tr><td>Country</td><td><input type="text" id = "country" value = "USA"></td></tr><tr><td>State or Province   </td><td><input type="text" id = "province" value = "California"></td></tr><tr><td>City</td><td><input type="text" id =  "city" value ="Orange"></td></tr><tr><td>Organization</td><td><input type="text" id= "org" value = "Household"></td></tr><tr><td>Organizer</td><td><input type="text" id = "ou" value="Gmail?"></td></tr><tr><td>Email</td><td><input type="text" id = "email" value="name@site.com"></td></tr></table>
+<input type="button" value="Begin" id="start_button" onclick="writeTheCookie()">

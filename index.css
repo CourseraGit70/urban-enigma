@@ -1,0 +1,106 @@
+body {
+  background-color: #363539;
+}
+
+#console {
+  font-family: courier, monospace;
+  color: #ADB3B6;
+  width: 750px;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 14px;
+}
+
+input[type=text]{
+  font-family: courier, monospace;
+  color: #E4E6E7;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  border: 0px;
+  background-color: #29282B;
+}
+
+input[type=button]{
+  font-family: courier, monospace;
+  color: #E4E6E7;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  border: 0px;
+  background-color: #48474B;
+}
+
+a {
+  text-decoration: none;
+  color: #E4E6E7;
+}
+
+#comment {
+  color: #6F777B;
+}
+
+#b {
+  color: #98B6CB;
+}
+
+#bd {
+  color: #6693B0;
+}
+
+#g {
+  color: #AAC69D;
+}
+
+#gd {
+  color: #6B9557;
+}
+
+#r {
+  color: #CC979C;
+}
+
+#rd {
+  color: #B3646B;
+}
+
+#y {
+  color: #D5CC8E;
+}
+
+#yd {
+  color: #BAAB45;
+}
+
+#p {
+  color: #AE9EC5;
+}
+
+#pd {
+  color: #8A74AB;
+}
+
+
+#a {
+	color: #0f0;
+}
+
+#c {
+	color: #0bc;
+}
+
+#k {
+    	animation: change 1s;
+}
+
+#op{
+    	color: #888888
+}
+@keyframes change {
+    	0%  { color: #ADB3B6; }
+    	50% { color: #ADB3B6; }
+    	99% { color: #363539; }
+}
