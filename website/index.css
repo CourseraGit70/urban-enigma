@@ -14,34 +14,26 @@ body {
   font-size: 14px;
 }
 
-input[type=text]{
+input {
   font-family: courier, monospace;
   color: #E4E6E7;
   margin-left: auto;
   margin-right: auto;
   font-size: 14px;
   border: 0px;
+  background-color: #29282B;
+}
+
+input[type=text]{
   background-color: #29282B;
 }
 
 
 input[type=password]{
-  font-family: courier, monospace;
-  color: #E4E6E7;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;
-  border: 0px;
   background-color: #29282B;
 }
 
 input[type=button]{
-  font-family: courier, monospace;
-  color: #E4E6E7;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;
-  border: 0px;
   background-color: #48474B;
 }
 
