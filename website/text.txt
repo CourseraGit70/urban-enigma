@@ -10,5 +10,7 @@ It shouldn't take too long! If you have any questions that aren't answered by th
 <span id="g">urban@enigma</span>:<span id="b">~</span><span id="gd">$</span> ./<!-- laglaglaglaglaglaglaglaglag -->information<br/><br/>
 To proceed, we will need some of your personal information.
 <!-- please create a long delay so that it fits the theme, thank you. -->
-<table><tr><td>Country</td><td><input type="text" id = "country" value = "USA"></td></tr><tr><td>State or Province   </td><td><input type="text" id = "province" value = "California"></td></tr><tr><td>City</td><td><input type="text" id =  "city" value ="Orange"></td></tr><tr><td>Organization</td><td><input type="text" id= "org" value = "Household"></td></tr><tr><td>Organizer</td><td><input type="text" id = "ou" value="Gmail?"></td></tr><tr><td>Email</td><td><input type="text" id = "email" value="name@site.com"></td></tr></table>
+<table><tr><td>Country</td><td><input type="text" id = "country" value = "USA"></td></tr><tr><td>State or Province   </td><td><input type="text" id = "province" value = "California"></td></tr><tr><td>City</td><td><input type="text" id =  "city" value ="Orange"></td></tr><tr><td>Organization</td><td><input type="text" id= "org" value = "Household"></td></tr><tr><td>Organizer</td><td><input type="text" id = "ou" value="Gmail?"></td></tr><tr><td>Email</td><td><input type="text" id = "email" value="name@site.com"></td></tr>
+<tr><td>Username</td><td><input type="text" id = "username" value="walley"></td></tr>
+<tr><td>Password</td><td><input type="password" type="text" id = "password" value=""></td></tr></table>
 <input type="button" value="Begin" id="start_button" onclick="writeTheCookie()">
