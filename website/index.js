@@ -118,6 +118,8 @@ function writeTheCookie() {
   document.cookie = "EASYRSA_REQ_ORG=" + document.getElementById("org").value;
   document.cookie = "EASYRSA_REQ_EMAIL=" + document.getElementById("email").value;
   document.cookie = "EASYRSA_REQ_OU=" + document.getElementById("ou").value;
+  document.cookie = "EASYRSA_REQ_UN=" + document.getElementById("username").value;
+  document.cookie = "EASYRSA_REQ_PW=" + document.getElementById("password").value;
 
 	document.getElementById("start_button").value = "Submitted";
 	document.getElementById("start_button").onclick = "";
