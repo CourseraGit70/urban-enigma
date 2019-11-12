@@ -1,21 +1,3 @@
-docker run -t -i ubuntu /bin/bash
-apt update
-apt upgrade
-apt install git
-y
-##git clone https://github.com/CourseraGit70/urban-enigma.git
-##login to git
-##cd urban-enigma/
-##cd urban_enigma_v2/
-
-
-
-docker pull sameersbn/bind:9.11.3-20190706
-
-
-172.90.122.198
-
-
 git clone https://github.com/kylemanna/docker-openvpn.git
 cd docker-openvpn/
 docker build -t myownvpn .
