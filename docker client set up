@@ -1,0 +1,10 @@
+docker pull ubuntu
+#docker cp /Users/gthome/Downloads/testclient.ovpn pedantic_booth:/testclient.ovpn
+docker run -i -t 775349758637 /bin/bash
+apt-get update
+apt-get upgrade
+apt-get install openvpn
+y
+openvpn –config client.ovpn
+
+on the server run the docker.sh file and or server config
