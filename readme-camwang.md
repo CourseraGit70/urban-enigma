@@ -20,5 +20,12 @@ Stretch #2:
 - Combine work with Megan on frontend and have the webpage implemented in Node.js
 - Have the Heroku server running
 
+Stretch #3:
+-Created three sample games and had them implemented with Megan
+-Changed from using Three.js to Phaser
+-Heroku not working how we want for email server rethinking using domain name and redirect with Greg
+
 Notes:
-All goals of Stretch #1 were accomplished. I have a Heroku account and have begun looking at using Heroku for SMTP. I also setup a Node.js webpage that is a basic Hello World! for now
+All goals of Stretch #1 were accomplished. I have a Heroku account and have begun looking at using Heroku for SMTP. I also setup a Node.js webpage that is a basic Hello World! for now. 
+
+Stretch #2 goals shifted slightly but have games working in the frontend webpage, and accomplished integrating with Megan's UI. For email Greg is going to purchase the domain name.
