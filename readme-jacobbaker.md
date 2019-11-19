@@ -17,6 +17,9 @@ Stretch #1:
 Stretch #2:
 - Continue to test the frontend and backend and report
   the issues.
+  
+Strech #3:
+- Begin to test the ovpn implementation in docker and figure out how to change the .ovpn config file
 
 Notes:
 The backend has been tested in docker and issues have been reported.  
