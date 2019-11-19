@@ -8,7 +8,7 @@ and secure.
 ------------
 
 To run:
-Execute docker_server.sh
-Execute docker client setup
+Execute docker_server.sh. 
+Execute docker client setup. 
 You will need to manually update the container names (for now) and manually transfer the server key.
 
