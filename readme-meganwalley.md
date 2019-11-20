@@ -31,7 +31,20 @@ Stretch #2:
     displays the log of what the backend sends to be displayed
 - Begin programming of a few logic games
 
+Stretch #3:
+- Finish the tie in with the games to the main index.html
+- Clean up index.html, update page to display game graphics more clearly
+- Add text effects to alerts from the backend so that they appear
+  with to be typed in, similar to the main page.
+
 Notes:
+11/5/2019
 All goals of Stretch #1 were accomplished. I have a simple color scheme
 and a few ideas on how to make the website more involved that have not
 been implemented at all yet
+
+11/19/2019
+Added the games Cam worked on to the main page, but I didn't complete the
+log to show the user what's happening in the bacend, nor did I encrypt the 
+cookie. Moving alert system to Stretch #3, removing encryption of the 
+cookie out of the project, because I'm currently not sure that's needed.
