@@ -26,9 +26,9 @@ Stretch #1:
 
 Stretch #2:
 - Complete the rudimentary webpage that:
-    asks the user for their information
-    creates an encrypted cookie
-    displays the log of what the backend sends to be displayed
+   - asks the user for their information
+   - creates an encrypted cookie
+   - displays the log of what the backend sends to be displayed
 - Begin programming of a few logic games
 
 Stretch #3:
