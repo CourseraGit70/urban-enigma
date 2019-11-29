@@ -7,6 +7,12 @@ curl -o .env https://raw.githubusercontent.com/tomav/docker-mailserver/master/.e
 
 curl -o env-mailserver https://raw.githubusercontent.com/tomav/docker-mailserver/master/env-mailserver.dist
 
+
+#insert the updated docker-compose.yml file into the directory created
+
+
+
+
 docker-compose up -d mail
 ./setup.sh email add <user@domain> [<password>]
 ./setup.sh config dkim
@@ -14,3 +20,5 @@ docker-compose up -d mail
 docker-compose down
 docker pull tvial/docker-mailserver:latest
 docker-compose up -d mail
+
+
