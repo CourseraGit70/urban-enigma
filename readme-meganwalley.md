@@ -48,7 +48,10 @@ Final Push:
 - Record 'Elevator Pitch'
 - Update the group's final readme.md
 
-Notes:
+
+------------
+
+**Notes:**
 
 11/5/2019
 > All goals of Stretch #1 were accomplished. I have a simple color scheme
