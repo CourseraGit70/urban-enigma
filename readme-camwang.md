@@ -25,6 +25,11 @@ Stretch #3:
 - Changed from using Three.js to Phaser
 - Heroku not working how we want for email server rethinking using domain name and redirect with Greg
 
+Final Submission
+- Polished the three javascript games which proved to be challenging because I had not worked with the Phaser library before nor did I have much expirence with javascript or html
+- Worked with Megan to finish the implementation of the games in an iframe on the website
+- Ensure the games worked in the docker container and that it did not disrupt the cookie generation or any other frontend client processes.
+
 Notes:
 All goals of Stretch #1 were accomplished. I have a Heroku account and have begun looking at using Heroku for SMTP. I also setup a Node.js webpage that is a basic Hello World! for now. 
 
