@@ -16,9 +16,3 @@ curl -o env-mailserver https://raw.githubusercontent.com/tomav/docker-mailserver
 docker-compose up -d mail >> website/data.js
 ./setup.sh email add <user@domain> [<password>] >> website/data.js
 ./setup.sh config dkim >> website/data.js
-
-docker-compose down >> website/data.js
-docker pull tvial/docker-mailserver:latest >> website/data.js
-docker-compose up -d mail >> website/data.js
-
-
