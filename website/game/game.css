@@ -1,0 +1,17 @@
+body, html {
+  background-color: #363539;
+  margin: 0;
+  font-family: courier, monospace;
+  color: #E4E6E7;
+  width: 200px;
+  height: 200px;
+  font-size: 14px;
+  border: 0px;
+  margin: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #E4E6E7;
+}

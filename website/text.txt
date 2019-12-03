@@ -14,3 +14,15 @@ To proceed, we will need some of your personal information.
 <tr><td>Username</td><td><input type="text" id = "username" value="walley"></td></tr>
 <tr><td>Password</td><td><input type="password" type="text" id = "password" value=""></td></tr></table>
 <input type="button" value="Begin" id="start_button" onclick="writeTheCookie()">
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
