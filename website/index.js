@@ -126,5 +126,6 @@ function writeTheCookie() {
 }
 
 function resetIFrame() {
-	document.getElementById("game").contentDocument.location.reload(true);
+	iframe = document.getElementById('game');
+	iframe.src = 'website/game.html';
 }
