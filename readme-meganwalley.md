@@ -49,6 +49,7 @@ Final Push:
 - Update the group's final readme.md
 
 Notes:
+
 11/5/2019
 > All goals of Stretch #1 were accomplished. I have a simple color scheme
 and a few ideas on how to make the website more involved that have not
@@ -68,3 +69,4 @@ users can flip back and forth between, but it isn't nearly as informative
 as I would have liked. Have a little bit more to complete for the group, 
 like with the elevator pitch, the group's readme.md for the final version, 
 and with making sure the alerts come in correctly.
+
