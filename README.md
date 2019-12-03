@@ -9,6 +9,8 @@ and secure.
 
 To run:
 Execute docker_server.sh. 
-Execute docker client setup. 
-You will need to manually update the container names (for now) and manually transfer the server key.
-
+Execute docker_client_setup.sh.  
+You will need to manually update the directories. 
+Execute docker_dns_encrypt.sh.
+Execute lines 1-8 in docker_mail_server.sh. Replace the docker-compose.yml file in the newly created directory with the one in the github repo.
+Execute line 16-18. (mail server is not fully functional however)
