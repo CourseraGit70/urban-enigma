@@ -3,15 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Urban Enigma</title>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "website/index.css">
   </head>
   <body>
     <script type="text/javascript" src="website/index.js"></script>
-    <div id = "console"></div>
+    <!--<div id = "console-container">
+        <div id = "console"></div>
+    </div>-->
+    <header> urban-enigma</header>
+    <div id = "console-container"> <div id="console">This is where the console will go.</div></div>
+    <div id = "game-container">
+      <iframe id="game" src="website/game.html" height="500" scrolling = "no"> This is where the game will go.</iframe>
+    </div>
+    <footer>
+      <div id="alert">
+        <input type="button" id="back_button" onclick="resetIFrame()" value="Back"></input>
+      </alert>
+    </footer>
   </body>
 </html>
-
-
-<!-- 353739 ? E4E6E7 font -->
