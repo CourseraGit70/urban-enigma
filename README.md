@@ -7,6 +7,8 @@ that may be technologically illiterate. Everyone deserves to be safe
 and secure.
 ------------
 
+Download the repo.
+
 To run:
 Execute docker_server.sh. 
 Execute docker_client_setup.sh.  
