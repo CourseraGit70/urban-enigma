@@ -10,8 +10,8 @@ and secure.
 ------------
 My job is to work on the UI and to make the process simple and engaging. 
 There will be a single HTML page that will load up from
-the docker that will ask the user for their information and create an
-encrypted cookie from that information that the main program will
+the docker that will ask the user for their information and create a
+ cookie from that information that the main program will
 use to begin downloading everything. Once this process begins, there
 will be several UI elements. One will be a log of what is happening
 on the backend, so that those curious users and people that do have
