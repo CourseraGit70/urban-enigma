@@ -1,7 +1,12 @@
+//created following https://phaser.io/phaser3/devlog/85 to learn phaser
+//getting width and height of window for phaser
+var gameWidth = window.innerWidth;
+var gameHeight = window.innerHeight;
+//basic config for a phaser object
 var config = {
     type: Phaser.WEBGL,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: gameWidth,
+    height: gameHeight,
     backgroundColor: '#777777',
     parent: 'phaser-example',
     scene: {
@@ -10,9 +15,11 @@ var config = {
         update: update
     }
 };
-
+//snake object 
 var snake;
+//food object
 var food;
+//user input variable
 var cursors;
 
 //  Direction consts
@@ -25,51 +32,56 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
+    //loading game assets in
     this.load.image('food', './assets/food.png');
     this.load.image('body', './assets/body.png');
 }
 
 function create ()
 {
+    //creating the food object
     var Food = new Phaser.Class({
 
         Extends: Phaser.GameObjects.Image,
 
         initialize:
-
+        //constructor
         function Food (scene, x, y)
         {
             Phaser.GameObjects.Image.call(this, scene)
-
+            //sets the sprite for the food
             this.setTexture('food');
+            //sets the location and sets it onto a 16x16 grid
             this.setPosition(x * 16, y * 16);
             this.setOrigin(0);
 
             this.total = 0;
-
+            //adds itself to the scene
             scene.children.add(this);
         },
-
+        //function for removing food
         eat: function ()
         {
             this.total++;
         }
 
     });
-
+    //creating the player object
     var Snake = new Phaser.Class({
 
         initialize:
 
         function Snake (scene, x, y)
         {
+            //creating geometry for snake to have sprite render properly
             this.headPosition = new Phaser.Geom.Point(x, y);
 
             this.body = scene.add.group();
-
+            //sets the head onto the 16x16 grid
             this.head = this.body.create(x * 16, y * 16, 'body');
             this.head.setOrigin(0);
 
+            //initiallizing variables
             this.alive = true;
 
             this.speed = 100;
@@ -77,11 +89,11 @@ function create ()
             this.moveTime = 0;
 
             this.tail = new Phaser.Geom.Point(x, y);
-
+            //defaults to start the player moving right
             this.heading = RIGHT;
             this.direction = RIGHT;
         },
-
+        //deals with movement on a timer
         update: function (time)
         {
             if (time >= this.moveTime)
@@ -89,7 +101,7 @@ function create ()
                 return this.move(time);
             }
         },
-
+        //different functions to change the heading of the player by inputs
         faceLeft: function ()
         {
             if (this.direction === UP || this.direction === DOWN)
@@ -121,49 +133,47 @@ function create ()
                 this.heading = DOWN;
             }
         },
-
         move: function (time)
         {
             /**
             * Based on the heading property (which is the direction the pgroup pressed)
             * we update the headPosition value accordingly.
-            *
+            * 
             * The Math.wrap call allow the snake to wrap around the screen, so when
             * it goes off any of the sides it re-appears on the other.
             */
             switch (this.heading)
             {
                 case LEFT:
-                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x - 1, 0, config.width/16);
+                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x - 1, 0, gameWidth / 16);
                     break;
 
                 case RIGHT:
-                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x + 1, 0, config.width/16);
+                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x + 1, 0, gameWidth / 16);
                     break;
 
                 case UP:
-                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y - 1, 0, config.height/16);
+                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y - 1, 0, gameHeight / 16);
                     break;
 
                 case DOWN:
-                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 0, config.height/16);
+                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 0, gameHeight / 16);
                     break;
             }
 
             this.direction = this.heading;
 
-            //  Update the body segments and place the last coordinate into this.tail
+            //changes position of head and tail accordingly
             Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x * 16, this.headPosition.y * 16, 1, this.tail);
 
-            //  Check to see if any of the body pieces have the same x/y as the head
-            //  If they do, the head ran into the body
+            //  collider check for the snake hitting itself
 
             var hitBody = Phaser.Actions.GetFirst(this.body.getChildren(), { x: this.head.x, y: this.head.y }, 1);
 
             if (hitBody)
             {
                 console.log('dead');
-
+                //kills player if collides with itself
                 this.alive = false;
 
                 return false;
@@ -179,20 +189,22 @@ function create ()
 
         grow: function ()
         {
+            //creating another body to grow the player by one
             var newPart = this.body.create(this.tail.x, this.tail.y, 'body');
 
             newPart.setOrigin(0);
         },
-
+        //checking if the head of the snake is in the same space as the food
         collideWithFood: function (food)
         {
             if (this.head.x === food.x && this.head.y === food.y)
             {
+                //call the grow function to add a body segment
                 this.grow();
-
+                //destroying the food 
                 food.eat();
 
-                //  For every 5 items of food eaten we'll increase the snake speed a little
+                //  For every 5 items of food eaten incease the players speed
                 if (this.speed > 20 && food.total % 5 === 0)
                 {
                     this.speed -= 5;
@@ -208,7 +220,7 @@ function create ()
 
         updateGrid: function (grid)
         {
-            //  Remove all body pieces from valid positions list
+            //  Remove all body pieces from valid spawn positions list
             this.body.children.each(function (segment) {
 
                 var bx = segment.x / 16;
@@ -222,7 +234,7 @@ function create ()
         }
 
     });
-
+    //creates food and player at default places
     food = new Food(this, 3, 4);
 
     snake = new Snake(this, 8, 8);
@@ -274,7 +286,7 @@ function update (time, delta)
 }
 
 /**
-* We can place the food anywhere in our 40x30 grid
+* We can place the food anywhere in our grid
 * *except* on-top of the snake, so we need
 * to filter those out of the possible food locations.
 * If there aren't any locations left, they've won!
@@ -284,10 +296,9 @@ function update (time, delta)
 */
 function repositionFood ()
 {
-    //  First create an array that assumes all positions
-    //  are valid for the new piece of food
+    //  First creates an array that assumes all positions are valid for the new piece of food
 
-    //  A Grid we'll use to reposition the food each time it's eaten
+    //  A Grid used to reposition the food each time it's eaten
     var testGrid = [];
 
     for (var y = 0; y < 30; y++)
@@ -302,7 +313,7 @@ function repositionFood ()
 
     snake.updateGrid(testGrid);
 
-    //  Purge out false positions
+    //remove false positions
     var validLocations = [];
 
     for (var y = 0; y < 30; y++)
@@ -311,7 +322,7 @@ function repositionFood ()
         {
             if (testGrid[y][x] === true)
             {
-                //  Is this position valid for food? If so, add it here ...
+                //  Is this position valid for food
                 validLocations.push({ x: x, y: y });
             }
         }
@@ -322,7 +333,7 @@ function repositionFood ()
         //  Use the RNG to pick a random food position
         var pos = Phaser.Math.RND.pick(validLocations);
 
-        //  And place it
+        //  place food at pos
         food.setPosition(pos.x * 16, pos.y * 16);
 
         return true;

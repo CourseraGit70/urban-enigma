@@ -1,3 +1,4 @@
+//getting width and height of window for phaser
 var gameWidth = window.innerWidth;
 var gameHeight = window.innerHeight;
 
@@ -5,6 +6,7 @@ var config = {
     type: Phaser.AUTO,
     width: gameWidth,
     height: gameHeight,
+    //setting in the config to use the libraries gravity
     physics: {
         default: 'arcade',
         arcade: {
@@ -18,6 +20,7 @@ var config = {
         update: update
     }
 };
+//declaring variables
 const pipeWidth = 52;
 var game = new Phaser.Game(config);
 var isPaused = false,
@@ -27,8 +30,8 @@ var birdyX = (gameWidth/2)-50;
 var birdyY = (gameHeight/2)-50;
 function preload ()
 {
+    //preloading sprites
     this.load.image('sky', 'assets/sky.png');
-    // this.load.image('star', 'assets/star.png');
     this.load.image('pipeb', 'assets/pipeb.png');
     this.load.image('pipet', 'assets/pipet.png');
     this.load.spritesheet('birdy', 
@@ -41,22 +44,20 @@ function preload ()
     this.load.audio('die', './assets/sounds/sfx_die.ogg');
     this.load.audio('score', './assets/sounds/sfx_point.ogg');
 }
+//variables for obstacles,player input,player, and scoreboard
 var platforms,spacebar,player,scoreText;
 var gap = 150;
 var xGap = 250;
 var music;
 function create ()
 {
-    // this.add.image(400, 300, 'sky');
+    //hex value for colors
     var colors = ["0x1fbde0","0x0a4957","0x08272e"];
+    //getting a random color
     var randColor = colors[Math.floor(Math.random() * colors.length)];
+    //setting the background to the rand color
     this.cameras.main.setBackgroundColor(randColor)
-
-
-//    this.add.image(400, 300, 'star');
-    // this.physics.world.setBoundsCollision(true, true, true, false);
-
-    //Add score text
+    //setting score text
     scoreText = this.add.text(birdyX, (gameHeight/4),score,{ fontFamily: '"04b19"', fontSize: 60, color: '#fff' });
     
     platforms = this.physics.add.staticGroup();
@@ -66,6 +67,7 @@ function create ()
     platforms.create(pipePos, pos[0], 'pipeb').setScale(1).refreshBody();
     platforms.create(pipePos, pos[1], 'pipet').setScale(1).refreshBody();
 
+    //setting player to a physics object with the 
     player = this.physics.add.sprite(birdyX, birdyY, 'birdy');
 
     player.setBounce(0.2);
@@ -85,18 +87,7 @@ function create ()
     this.physics.add.collider(player, platforms, playerHit, null, game)
 
 
-    //  Stop the following keys from propagating up to the browser
-    // this.input.keyboard.addKeyCapture([Phaser.Input.Keyboard.KeyCodes.SPACE ]);
-
-    //
-
-    // this.scene.pause("default");
-    // isPaused = true;
-    // pause(this)
-
-
     spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    // spacebar.onDown.add(flapNow, this);
     this.input.keyboard.on('keydown-' + 'SPACE', flapNow);
     this.input.on('pointerdown', flapNow); //touch support
 
@@ -116,10 +107,6 @@ function getRandom() {
 var countpipe = 0;
 function update ()
 {
-    // if(spacebar.isDown) {
-        // console.log("pressed space")
-    // }
-    //platforms.setAll('body.velocity.x', -100);
     let children = platforms.getChildren();
     children.forEach((child) => {
         if (child instanceof Phaser.GameObjects.Sprite) {
@@ -138,9 +125,6 @@ function update ()
                     platforms.create(gameWidth+xGap, pos[1], 'pipet').setScale(1).refreshBody();
                     countpipe=0;
                 }
-
-                // child.x = game.canvas.width+pipeWidth;
-                // child.y = getRandom()[0];
             }
             if(child.x <= -50) {
                 console.log("Destroyed one "+countpipe)
@@ -148,9 +132,6 @@ function update ()
             }
 
             //check if pipe passed bird (birdyX)
-            // if(child.texture.key=="pipeb"){
-            //     console.log("x: ",child.x)
-            // }
             if(child.x< birdyX && !gameOver && child.texture.key=="pipeb" && !child.scored){ //only check one pipe
                 child.scored = true
                 score+=1;
@@ -161,7 +142,6 @@ function update ()
         }
     });
     //set lower Bounds
-    // console.log("y= ",player.y)
     if(player.y > Number(game.canvas.height)+200) {
         console.log("y= ",player.y)
         endGame();
@@ -177,14 +157,15 @@ function flapNow(){
     if(gameOver) return;
 
     if(isPaused) resume();
-    // console.log("flap")
+    //adding velocity to the player to move up
     player.setVelocityY(-330);
     game.sound.play("flap");
 }
 var hitflag = false;
 function playerHit() {
     if(hitflag) return
-    console.log("Player hit!!!!!!!!!")
+    console.log("Player has been hit!!!!!!!!!")
+    //checks if the player has been hit recently and plays the sound 
     var hitSound = game.sound.play("hit");
     hitflag=true;
     setTimeout(playerDead, 200)
@@ -193,6 +174,7 @@ function playerHit() {
 function playerDead() {
     console.log("Player dead!!!!!!!!!")
     game.sound.play("die");
+    //plays death sound and stops player from colliding with things to position it in the middle of the screen
     player.setCollideWorldBounds(false);
     gameOver =  true;
 }
