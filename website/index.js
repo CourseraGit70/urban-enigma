@@ -129,3 +129,36 @@ function resetIFrame() {
 	iframe = document.getElementById('game');
 	iframe.src = 'website/game.html';
 }
+
+function resetAlert() {
+	iframe = document.getElementById('alert');
+	iframe.src = 'website/text.html';
+}
+
+
+function startWatching() {
+        var file;
+
+        if (typeof window.FileReader !== 'function') {
+            display("The file API isn't supported on this browser yet.");
+            return;
+        }
+
+        input = document.getElementById('filename');
+        if (!input) {
+            display("Um, couldn't find the filename element.");
+        }
+        else if (!input.files) {
+            display("This browser doesn't seem to support the `files` property of file inputs.");
+        }
+        else if (!input.files[0]) {
+            display("Please select a file before clicking 'Show Size'");
+        }
+        else {
+            file = input.files[0];
+            lastMod = file.lastModifiedDate;
+            display("Last modified date: " + lastMod);
+            display("Change the file");
+            setInterval(tick, 250);
+        }
+    }

@@ -1,36 +1,14 @@
 body, html {
   background-color: #363539;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
   margin: 0;
-}
-
-#console-container {
-}
-iframe {
-    height: 100%;
-    width: 100%;
-}
-#console, alert {
-    font-family: courier, monospace;
-    color: #ADB3B6;
-    font-size: 14px;
-}
-#console::webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-}
-
-header {
   font-family: courier, monospace;
   color: #E4E6E7;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 32px;
+  width: 100%;
+  font-size: 14px;
   border: 0px;
-  background-color: #29282B;
+  margin: 20px;
 }
+
 
 input {
   font-family: courier, monospace;
@@ -126,66 +104,33 @@ a {
     	99% { color: #363539; }
 }
 
-header, footer {
-    background: #363539;
-    color: white;
-    min-height: 10%;
-    max-height: 10%;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 25px;
-}
-
-#game-container, #console-container {
+#console-container {
     padding: 20px;
-    min-height: 70%;
+    min-height: 80%;
     max-height: 80%;
     box-sizing: border-box;
     float: left;
     width: 50%;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-footer {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    outline: none;
-    max-height: 20%;
-    overflow: hidden;
-}
-
-#alert {
-  float: center;
-  text-align: right;
-  width:95%;
-  outline: none;
-  overflow: auto;
-  border: 0;
-}
-
-
-#game-container {
     outline: none;
     overflow: hidden;
-  overflow: hidden;
-  padding-top: 56.25%;
-  position: relative;
 }
 
-#game-container iframe {
-   border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
-}
-
-iframe {
+#console {
+    font-family: courier, monospace;
+    color: #ADB3B6;
+    font-size: 14px;
     outline: none;
     width: 105%;
-    min-height: 500;
-    max-height: 500;
     overflow: auto;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#console::webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
